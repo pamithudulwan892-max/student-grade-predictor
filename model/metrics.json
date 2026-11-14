@@ -1,0 +1,134 @@
+{
+  "task": "classification",
+  "target": "result",
+  "best_model": "Logistic Regression",
+  "cv_metric": "roc_auc",
+  "cv_scores": {
+    "Logistic Regression": 0.9430545636652508,
+    "Random Forest": 0.9387880511162955,
+    "Gradient Boosting": 0.9329330681239079
+  },
+  "test_metrics": {
+    "accuracy": 0.8852,
+    "f1_macro": 0.8301,
+    "roc_auc": 0.9352
+  },
+  "n_rows": 1044,
+  "classes": [
+    "Fail",
+    "Pass"
+  ],
+  "schema": {
+    "age": {
+      "type": "number",
+      "min": 15.0,
+      "max": 22.0,
+      "default": 17.0,
+      "integer": true
+    },
+    "weekly_study_time": {
+      "type": "number",
+      "min": 1.0,
+      "max": 4.0,
+      "default": 2.0,
+      "integer": true
+    },
+    "past_class_failures": {
+      "type": "number",
+      "min": 0.0,
+      "max": 3.0,
+      "default": 0.0,
+      "integer": true
+    },
+    "absences": {
+      "type": "number",
+      "min": 0.0,
+      "max": 75.0,
+      "default": 2.0,
+      "integer": true
+    },
+    "going_out_with_friends": {
+      "type": "number",
+      "min": 1.0,
+      "max": 5.0,
+      "default": 3.0,
+      "integer": true
+    },
+    "weekend_alcohol_use": {
+      "type": "number",
+      "min": 1.0,
+      "max": 5.0,
+      "default": 2.0,
+      "integer": true
+    },
+    "health_status": {
+      "type": "number",
+      "min": 1.0,
+      "max": 5.0,
+      "default": 4.0,
+      "integer": true
+    },
+    "mother_education": {
+      "type": "number",
+      "min": 0.0,
+      "max": 4.0,
+      "default": 3.0,
+      "integer": true
+    },
+    "first_period_grade": {
+      "type": "number",
+      "min": 0.0,
+      "max": 19.0,
+      "default": 11.0,
+      "integer": true
+    },
+    "subject": {
+      "type": "category",
+      "options": [
+        "Math",
+        "Portuguese"
+      ],
+      "default": "Portuguese"
+    },
+    "sex": {
+      "type": "category",
+      "options": [
+        "F",
+        "M"
+      ],
+      "default": "F"
+    },
+    "wants_higher_education": {
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "yes"
+    },
+    "internet_at_home": {
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "yes"
+    },
+    "extra_school_support": {
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "no"
+    },
+    "family_support": {
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "yes"
+    }
+  }
+}
