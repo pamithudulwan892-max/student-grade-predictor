@@ -103,7 +103,7 @@ if TASK == "classification":
     if binary:
         test["roc_auc"] = roc_auc_score(y_te == best.classes_[1], best.predict_proba(X_te)[:, 1])
     ConfusionMatrixDisplay.from_predictions(y_te, pred, cmap="Blues")
-    plt.title(f"Confusion matrix — {best_name}")
+    plt.title(f"Confusion matrix ({best_name})")
     plt.tight_layout(); plt.savefig("assets/confusion_matrix.png", dpi=150); plt.close()
 else:
     test["rmse"] = float(np.sqrt(mean_squared_error(y_te, pred)))
@@ -112,7 +112,7 @@ else:
     plt.scatter(y_te, pred, alpha=0.4)
     lo, hi = float(min(y_te.min(), pred.min())), float(max(y_te.max(), pred.max()))
     plt.plot([lo, hi], [lo, hi], "r--"); plt.xlabel("Actual"); plt.ylabel("Predicted")
-    plt.title(f"Predicted vs actual — {best_name}")
+    plt.title(f"Predicted vs actual ({best_name})")
     plt.tight_layout(); plt.savefig("assets/pred_vs_actual.png", dpi=150); plt.close()
 
 imp = permutation_importance(best, X_te, y_te, n_repeats=5, random_state=RANDOM_STATE)
